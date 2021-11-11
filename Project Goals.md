@@ -1,6 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6306310&assignment_repo_type=AssignmentRepo)
 
 # Github Gurus COSC 360 Project
+Codeterra
 
 **Due Dates:** 
 1. **I. Monday, November 1st, 2021**
@@ -9,7 +10,14 @@
 
 
 # Overview:
-The project is designed to help develop your skills for full stack development.  With this project, you will build an online application that will allow users to register, create and participate in different features of your site. **The project is a group project of 2 to 3 people**.   Please note that the grading rubric for different aspects of the project.  
+Avi Varma
+Sam Peter
+
+This project aims to build an online platform that will facilitate allow developers to create and engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v). The 
+
+The goal is to produce a similar type services that allows users to register, post stories and make comments on items. Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
+
+
 
 # Hardware and Software: 
 
@@ -86,18 +94,6 @@ In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap 
 
 This project should demonstrate your knowledge in full stack web design and programming. Your final submission will be submitted both electronically in the provided repository in addition to the site being available on cosc360.ok.ubc.ca. All your code and related files will be stored into the class project repository.
 
-# Milestones:
-
-**I. Monday, November 1st, 2021**
-
-1. Project Proposal - 5%
- * Team member selections - list 
- * Project description and details:
- * Provide a description of the project you are going to undertake
- * Requirements list of what (at a minimum) your site will do (you will need to explore existing sites to understand their functional offerings). You should be able to understand from reading this document exactly what a user/administrator will be able to do on the site.  You will receive feedback on this so that you can direct the efforts of your project accordingly.
- * This will form a list of minimum end deliverables on the project and should be a comprehensive document (but you can expand on it).
- * You can submit this as a readme type document in your project repo.
- * Early review is encouraged for feedback.
 
 **II. Sunday, November 14th, 2021**
 
