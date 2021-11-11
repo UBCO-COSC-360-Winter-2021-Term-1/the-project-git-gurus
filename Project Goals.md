@@ -1,7 +1,12 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6306310&assignment_repo_type=AssignmentRepo)
-# The COSC 360 Project
 
-**Due Dates:** See Milestone Dates
+# Github Gurus COSC 360 Project
+
+**Due Dates:** 
+1. **I. Monday, November 1st, 2021**
+2. second
+3. third
+
 
 # Overview:
 The project is designed to help develop your skills for full stack development.  With this project, you will build an online application that will allow users to register, create and participate in different features of your site. **The project is a group project of 2 to 3 people**.   Please note that the grading rubric for different aspects of the project.  
