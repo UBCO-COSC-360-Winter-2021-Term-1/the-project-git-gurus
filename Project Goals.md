@@ -1,17 +1,16 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6306310&assignment_repo_type=AssignmentRepo)
 
 # Github Gurus COSC 360 Project
-Codeterra: Coding Aggregator
+Codeterra: Coding News Aggregator
 
 **Due Dates:** 
 1. Monday, November 1st, 2021
 2. Sunday, November 14th, 2021
 3. Tuesday, December 7th, 2021
 
-
 # Overview:
-Avi Varma
-Sam Peter
+A Project by:
+Avi Varma & Sam Peter
 
 This project aims to build an online platform that will facilitate allow developers to create and engage in online discussions about coding and other technology, similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v) but with a focus on this specific niche of the internet.  
 
@@ -19,15 +18,10 @@ This project aims to build an online platform that will facilitate allow develop
 
 The **CodeTerra** website will allow registered users to engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v).  The goal is to produce a similar type services that allows users to register, post stories and make comments on items.   Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
 
-
-
-
 # Hardware and Software: 
-The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in addition to CSS, HTML5 and JavaScript on the client-side. In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are to be used. 
+The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in addition to CSS, HTML5 and JavaScript on the client-side. In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are to be used to help create a visually appealing and interactive web experience. 
 
 The backend will utilize PHP. Your project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
-
-
 
 A first goal is to create the layout for the site.  The layout is to be a 2 or 3-column layout with navigation links along the top.  **No styling frameworks are permitted other than Bootstrap as you are to develop the styling for the page using CSS (you can use flexgrid as this is a component of CSS)**.  The page requires a masthead as well as a footer.  The navigation links need to be available regardless of the where a user is viewing the page.   
 
@@ -89,12 +83,10 @@ As this project is about demonstrating and applying different web technologies, 
 
 
 # Deliverables:
-
 This project should demonstrate your knowledge in full stack web design and programming. Your final submission will be submitted both electronically in the provided repository in addition to the site being available on cosc360.ok.ubc.ca. All your code and related files will be stored into the class project repository.
 
 
 **II. Sunday, November 14th, 2021**
-
 2. Client Side Experience/Report (25%) - This is the frontend layout of your site
  * Layout document (Planned layout of your page in hardcopy/electronic copy showing elements, sizes, placement – this is the plan for what your site will look like and would recommend doing this BEFORE you actually build your site)
  * Organization of pages (How are pages linked? – site map)
@@ -130,7 +122,6 @@ This project should demonstrate your knowledge in full stack web design and prog
  * 10 marks is reserved for deployment, version control, client and server side unit testing (if you do not test or deploy the maximum you can get out of this section is 60/70).  It is expected the team members will all contribute to the project (ie everyone is committing to the repo with work) AND that commits/efforts on the project will take place over the next several months.   Additionally, you (the team) will need to think about and investigate how to test different aspects of your site. 
 
 **Comments:**
-
 You are welcome to submit before the deadlines.  The milestones are in place to indicate what will be evaluated at these points (ie. Proposal, Layout, client-side validation, and security will be evaluated against the basic functional requirements) but you can improve with additional functionality which will be evaluated at final submission.
 
 This project is not intended to be a complex project (in terms of the content and number of pages) but is intended to provide the opportunity to develop and showcase your full-stack skills.  In the development of the project, focus on key functional objectives and work through them in a planned fashion.  A simple, functional and well organized side is acceptable as long as it contains the required functionality utilizing the appropriate technology as well as features from the 'additional list'.   Please review the functional requirements to ensure your design satisfies the requirements.
