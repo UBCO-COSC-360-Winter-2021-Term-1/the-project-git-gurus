@@ -1,31 +1,33 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6306310&assignment_repo_type=AssignmentRepo)
 
 # Github Gurus COSC 360 Project
-Codeterra
+Codeterra: Coding Aggregator
 
 **Due Dates:** 
-1. **I. Monday, November 1st, 2021**
-2. second
-3. third
+1. Monday, November 1st, 2021
+2. Sunday, November 14th, 2021
+3. Tuesday, December 7th, 2021
 
 
 # Overview:
 Avi Varma
 Sam Peter
 
-This project aims to build an online platform that will facilitate allow developers to create and engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v). The 
+This project aims to build an online platform that will facilitate allow developers to create and engage in online discussions about coding and other technology, similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v) but with a focus on this specific niche of the internet.  
 
-The goal is to produce a similar type services that allows users to register, post stories and make comments on items. Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
+# CodeTerra Website:
+
+The **CodeTerra** website will allow registered users to engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v).  The goal is to produce a similar type services that allows users to register, post stories and make comments on items.   Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
+
 
 
 
 # Hardware and Software: 
+The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in addition to CSS, HTML5 and JavaScript on the client-side. In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are to be used. 
 
-You will develop the project using Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca,in addition to CSS, HTML5 and JavaScript on the client-side.  **The backend must be completed with PHP**.  Your project will be stored in the class provided repository and will deployed to the cosc360 server.  The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
+The backend will utilize PHP. Your project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
 
-# MyDiscussionForum Website:
 
-The **MyDiscussionForum** website will allow registered users to engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v).  The goal is to produce a similar type services that allows users to register, post stories and make comments on items.   Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
 
 A first goal is to create the layout for the site.  The layout is to be a 2 or 3-column layout with navigation links along the top.  **No styling frameworks are permitted other than Bootstrap as you are to develop the styling for the page using CSS (you can use flexgrid as this is a component of CSS)**.  The page requires a masthead as well as a footer.  The navigation links need to be available regardless of the where a user is viewing the page.   
 
@@ -51,11 +53,10 @@ Pages will need to be created for user registration that allows for the entry of
 * Search for user by name, email or post
 * Enable/disable users
 * Edit/remove items and comments
- 
- As this project is about demonstrating and applying different web technologies, you will utilize different technologies in the construction of the site.   These
+As this project is about demonstrating and applying different web technologies, you will utilize different technologies in the construction of the site.
+
 
 # Minimum Functional Requirements:
-
 * Hand-styled layout with contextual menus (i.e. when user has logged on to site, menus reflect change). Layout frameworks are not permitted other than Bootstrap (see above).
 2 or 3 column layout using appropriate design principles (i.e. highlighting nav links when hovered over, etc) responsive design
 * Form validation with JavaScript
@@ -70,8 +71,8 @@ Pages will need to be created for user registration that allows for the entry of
 * Navigation breadcrumb strategy (i.e. user can determine where they are in threads)
 * Error handling (bad navigation)
 
-# Additional Requirements:
 
+# Additional Requirements:
 * Search and analysis for items
 * Hot threads/hot item tracking
 * Visual display of updates, etc (site usage charts, etc)
@@ -86,9 +87,6 @@ Pages will need to be created for user registration that allows for the entry of
 * Accessibility
 * Your choice (this is your opportunity to add additional flourish’s to your site but will need to be documented in the final report)
 
-# Additional Allowable Technologies:
-
-In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are permitted to be used. 
 
 # Deliverables:
 
