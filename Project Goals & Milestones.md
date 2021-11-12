@@ -53,3 +53,47 @@ As this project is about demonstrating and applying different web technologies, 
 * Accessibility
 * Your choice (this is your opportunity to add additional flourish’s to your site but will need to be documented in the final report)
 
+# Deliverables:
+This project should demonstrate your knowledge in full stack web design and programming. Your final submission will be submitted both electronically in the provided repository in addition to the site being available on cosc360.ok.ubc.ca. All your code and related files will be stored into the class project repository.
+
+**II. Sunday, November 14th, 2021**
+A first goal is to create the layout for the site.  The layout is to be a 2 or 3-column layout with navigation links along the top.  **No styling frameworks are permitted other than Bootstrap as you are to develop the styling for the page using CSS (you can use flexgrid as this is a component of CSS)**.  The page requires a masthead as well as a footer.  The navigation links need to be available regardless of the where a user is viewing the page.   
+
+2. Client Side Experience/Report (25%) - This is the frontend layout of your site
+ * Layout document (Planned layout of your page in hardcopy/electronic copy showing elements, sizes, placement – this is the plan for what your site will look like and would recommend doing this BEFORE you actually build your site)
+ * Organization of pages (How are pages linked? – site map)
+ * Logic process (How does a user engage with site?): This needs to include all processes for how the user/admin will engage site.
+ * Discussion regarding the design and styles of all pages
+ * Client-side validation
+ * Client-side security
+ * Static design and styles of pages
+ * Examples of each page type in your proposed site
+
+**III. Tuesday, December 7th, 2021**
+
+3. Deployment and Final Documentation (70%)
+ * Pages styled as per your design
+ * Pages live on server
+ * Client-side validation
+ * Client-side security
+ * Pages live on server
+ * Server-side implementation complete
+ * Posted on cosc360.ok.ubc.ca
+ * Server-side security
+ * User account information stored in database
+ * Items and associated details stored in database
+ * Chats/threads maintained in database
+ * Asynchronous updates for comments (as one user types, it updates without reloading)
+ * Database functionality complete
+ * Core functional components operational (see baseline objectives)
+ * A summary document, indicating implemented functionality and features (see below)
+ * Final delivery of site with additional functionality 
+ * In addition to your initial proposal and design for the site:
+   * A 2-3 page walkthrough document that can be used to test the site by performing the walkthrough you describe.  It is to your advantage to include sufficient detail to highlight the best features of your website. This should also include things like required login ids and passwords, how to test your site as well as identifying any unique features.  This document will be used as a guide to test what you did. This document should be written as a user guide. 
+   * A 2-3 page detailed description of your implementation from a system or developer's perspective including: What features did you implement? Include a description of the PHP and JavaScript files of your web site. How does your web site work at a high-level? Identify known limitations of the site? 
+ * 10 marks is reserved for deployment, version control, client and server side unit testing (if you do not test or deploy the maximum you can get out of this section is 60/70).  It is expected the team members will all contribute to the project (ie everyone is committing to the repo with work) AND that commits/efforts on the project will take place over the next several months.   Additionally, you (the team) will need to think about and investigate how to test different aspects of your site. 
+
+**Comments:**
+You are welcome to submit before the deadlines.  The milestones are in place to indicate what will be evaluated at these points (ie. Proposal, Layout, client-side validation, and security will be evaluated against the basic functional requirements) but you can improve with additional functionality which will be evaluated at final submission.
+
+This project is not intended to be a complex project (in terms of the content and number of pages) but is intended to provide the opportunity to develop and showcase your full-stack skills.  In the development of the project, focus on key functional objectives and work through them in a planned fashion.  A simple, functional and well organized side is acceptable as long as it contains the required functionality utilizing the appropriate technology as well as features from the 'additional list'.   Please review the functional requirements to ensure your design satisfies the requirements.
