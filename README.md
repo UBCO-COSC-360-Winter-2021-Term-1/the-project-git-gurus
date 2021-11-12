@@ -72,9 +72,10 @@ To build a web-based discussion forum that allows users engage in discussion on 
 # Deliverables:
 
 **II. Sunday, November 14th, 2021**
-A first goal is to create the layout for the site.  
-The layout is to be a 2 or 3-column layout with navigation links along the top.  
-The page requires a masthead as well as a footer. The navigation links need to be available regardless of the where a user is viewing the page.   
+
+* A first goal is to create the layout for the site. 
+* The layout is to be a 2 or 3-column layout with navigation links along the top.  
+* The page requires a masthead as well as a footer. The navigation links need to be available regardless of the where a user is viewing the page.   
 
 2. Client Side Experience/Report (25%) - This is the frontend layout of your site
  * Layout document (Planned layout of your page in hardcopy/electronic copy showing elements, sizes, placement – this is the plan for what your site will look like and would recommend doing this BEFORE you actually build your site)
