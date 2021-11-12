@@ -3,11 +3,6 @@
 # Github Gurus COSC 360 Project
 Codeterra: A Coding News Aggregator
 
-**Due Dates:** 
-1. Monday, November 1st, 2021
-2. Sunday, November 14th, 2021
-3. Tuesday, December 7th, 2021
-
 # Overview:
 A Project by:
 Avi Varma & Sam Peter
@@ -21,7 +16,6 @@ The **CodeTerra** website will allow registered users to engage in online discus
 The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in addition to CSS, HTML5 and JavaScript on the client-side. In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are to be used to help create a visually appealing and interactive web experience. 
 
 The project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
-
 
 **Project Statement:** To build a web-based discussion forum that allows users engage in discussion on different posted threads.  Registered users should be able to track the activity of comments on different threads, post comments, create new threads and browse current threads. The system must also support internal use by administrators who can track discussions and moderate discussions, resolve user problems (such as forgotten passwords), and generate usage reports.
 
