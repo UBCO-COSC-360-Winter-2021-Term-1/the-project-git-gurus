@@ -1,7 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6306310&assignment_repo_type=AssignmentRepo)
 
 # Github Gurus COSC 360 Project
-Codeterra: Coding News Aggregator
+Codeterra: A Coding News Aggregator
 
 **Due Dates:** 
 1. Monday, November 1st, 2021
@@ -12,22 +12,20 @@ Codeterra: Coding News Aggregator
 A Project by:
 Avi Varma & Sam Peter
 
-This project aims to build an online platform that will facilitate allow developers to create and engage in online discussions about coding and other technology, similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v) but with a focus on this specific niche of the internet.  
+This project aims to build an online platform that will facilitate developers to create and engage in online discussions about coding and other technology, similar to forums such as [Reddit](https://www.reddit.com/) and Hacker News but with a focus on this specific niche of the internet.  
 
 # CodeTerra Website:
+The **CodeTerra** website will allow registered users to engage in online discussions and unregistered users to view discussions similar to forums such as [Reddit](https://www.reddit.com/) and Hacker News.  The goal is to produce a similar type of service that allows users to register, post stories and make comments on items.   Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts.
 
-The **CodeTerra** website will allow registered users to engage in online discussions and unregistered users to view discussions similar to forums such as Reddit (https://www.reddit.com/) and Hacker News (v).  The goal is to produce a similar type services that allows users to register, post stories and make comments on items.   Additionally, unregistered users must be able to view the content but will not be able to edit or comment on posts. 
 
 # Hardware and Software: 
 The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in addition to CSS, HTML5 and JavaScript on the client-side. In addition to the core CSS3, PHP, HTML5 and JavaScript technologies, Bootstrap and JQuery are to be used to help create a visually appealing and interactive web experience. 
 
-The backend will utilize PHP. Your project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
+The project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
 
-A first goal is to create the layout for the site.  The layout is to be a 2 or 3-column layout with navigation links along the top.  **No styling frameworks are permitted other than Bootstrap as you are to develop the styling for the page using CSS (you can use flexgrid as this is a component of CSS)**.  The page requires a masthead as well as a footer.  The navigation links need to be available regardless of the where a user is viewing the page.   
-
-Pages will need to be created for user registration that allows for the entry of user information along with user image.  The form will need to be validated before being submitted using the appropriate technology.
 
 **Project Statement:** To build a web-based discussion forum that allows users engage in discussion on different posted threads.  Registered users should be able to track the activity of comments on different threads, post comments, create new threads and browse current threads. The system must also support internal use by administrators who can track discussions and moderate discussions, resolve user problems (such as forgotten passwords), and generate usage reports.
+
 
 **Project Objectives:** The objectives are divided into two categories. The first category is the minimal requirements for the project to get a passing grade (C). The other requirements are some of the additional options that can be added to create an improved project. These objectives are further divided based on the implementation of different functional components utilizing different technologies.
 
@@ -85,8 +83,9 @@ As this project is about demonstrating and applying different web technologies, 
 # Deliverables:
 This project should demonstrate your knowledge in full stack web design and programming. Your final submission will be submitted both electronically in the provided repository in addition to the site being available on cosc360.ok.ubc.ca. All your code and related files will be stored into the class project repository.
 
-
 **II. Sunday, November 14th, 2021**
+A first goal is to create the layout for the site.  The layout is to be a 2 or 3-column layout with navigation links along the top.  **No styling frameworks are permitted other than Bootstrap as you are to develop the styling for the page using CSS (you can use flexgrid as this is a component of CSS)**.  The page requires a masthead as well as a footer.  The navigation links need to be available regardless of the where a user is viewing the page.   
+
 2. Client Side Experience/Report (25%) - This is the frontend layout of your site
  * Layout document (Planned layout of your page in hardcopy/electronic copy showing elements, sizes, placement – this is the plan for what your site will look like and would recommend doing this BEFORE you actually build your site)
  * Organization of pages (How are pages linked? – site map)
