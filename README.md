@@ -17,7 +17,8 @@ The project will utilize Linux, MySQL, Apache and PHP on cosc360.ok.ubc.ca, in a
 
 The project will be stored in the class provided repository and will deployed to the cosc360 server. The project must be accessible on the UBC network and all source code must be available for review.  You are required to keep your code under version control with GIT.
 
-**Project Statement:** To build a web-based discussion forum that allows users engage in discussion on different posted threads.  Registered users should be able to track the activity of comments on different threads, post comments, create new threads and browse current threads. The system must also support internal use by administrators who can track discussions and moderate discussions, resolve user problems (such as forgotten passwords), and generate usage reports.
+# Project Statement:
+To build a web-based discussion forum that allows users engage in discussion on different posted threads.  Registered users should be able to track the activity of comments on different threads, post comments, create new threads and browse current threads. The system must also support internal use by administrators who can track discussions and moderate discussions, resolve user problems (such as forgotten passwords), and generate usage reports.
 
 # Deliverables:
 This project should demonstrate your knowledge in full stack web design and programming. Your final submission will be submitted both electronically in the provided repository in addition to the site being available on cosc360.ok.ubc.ca. All your code and related files will be stored into the class project repository.
