@@ -12,7 +12,7 @@ if(!isset($_SESSION["user"]) ) {
     <title>CodeTerra: New Post</title>
     <?php include 'standardheader.html';?>
     <!-- Password checking script here!! -->
-    <script type="text/javascript" src="scripts/validate.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
   </head>
 
   <?php include 'navbar.php';?>
@@ -24,12 +24,13 @@ if(!isset($_SESSION["user"]) ) {
       <br>
       
       Post Content:<br>
-      <textarea name="message" rows="10" cols="30" name="postContent" id="password-check" class="required">The cat was playing in the garden.</textarea>
+      <textarea rows="10" cols="30" name="postContent" id="postContent" class="required">Post Content.</textarea>
 
       <br>
       File Upload:<br>
       <input type="file" name="fileToUpload" id="fileToUpload">
       <br><br>
+
       <input type="submit" value="Create New User">
     </form>
   </body>
