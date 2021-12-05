@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="LogButtonLabel">Modal title</h5>
+                <h5 class="modal-title" id="LogButtonLabel">User Profile</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,16 +11,20 @@
             <div class="modal-body">
                 <?php 
                 if(!isset($_SESSION["user"])) {
-                    echo( '... ');
+                    include 'loginform.php';
+                    echo('<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>');
                 } else {
                     echo('<p>User signed in is ' . $_SESSION["user"] .' </p>');
+                    echo('<div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="http://cosc360.ok.ubc.ca/avivarma/logout.php"><button type="button" class="btn btn-primary">Log Out</button><a>
+                    </div>');
                 }
                 ?>
             </div>
-            <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            
         </div>
     </div>
 </div>

@@ -6,7 +6,8 @@
     <!-- Password checking script here!! -->
     <script type="text/javascript" src="js/validate.js"></script>
   </head>
-  <?php include 'navbar.php';?>
+  <!-- Let's not bother with a navbar as we'll be accessing this from our modal. -->
+  <?php //include 'navbar.php';?>
 
   <body>
 
