@@ -23,7 +23,7 @@
                         <a class="dropdown-item" href="./newuser.php">New User</a>    
                         <a class="dropdown-item" href="./finduser.php">Find Users</a>
                         <a class="dropdown-item" href="./changepassword.php">Change Password</a>
-
+                        <a class="dropdown-item" href="./newpost.php">New Post</a>
 
                         
                         
