@@ -1,1 +1,1 @@
-Server side code here.
+Client side code here.
