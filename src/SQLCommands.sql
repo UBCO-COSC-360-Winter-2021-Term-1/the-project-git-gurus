@@ -41,22 +41,23 @@ ALTER TABLE `userImages`
   ADD PRIMARY KEY (`userID`),
   ADD KEY `userID` (`userID`);
 
-ALTER TABLE `userImages`
-  ADD CONSTRAINT `userimages_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `userImages` ADD CONSTRAINT `userimages_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TABLE `userPosts` (
-  postID int(25) NOT NULL UNIQUE AUTO_INCREMENT,
-  UserID int(11) NOT NULL,
-  PostContent varchar(8000),
-  PRIMARY KEY (PostID),
+  userID int(11) NOT NULL,
+  postTitle varchar(100) NOT NULL,
+  postContent varchar(8000),
+  postDateTime datetime NOT NULL,
   FOREIGN KEY (UserID) REFERENCES users(UserID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+ALTER TABLE `userPosts` ADD `postID` INT NOT NULL AUTO_INCREMENT , ADD UNIQUE (`postID`);
+ALTER TABLE `userPosts` ADD PRIMARY KEY (`postID`);
 
 CREATE TABLE `postImages` (
-  'postID' int(25) NOT NULL,
-  'contentType' varchar(255) NOT NULL,
-  'image' blob NOT NULL
+  `postID` int(11) NOT NULL,
+  `contentType` varchar(255) NOT NULL,
+  `image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `postImages`
@@ -65,7 +66,3 @@ ALTER TABLE `postImages`
 
 ALTER TABLE `postImages`
   ADD CONSTRAINT `postimages_ibfk_1` FOREIGN KEY (`postID`) REFERENCES `userPosts` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-
-ALTER TABLE `userPosts` ADD `postTitle` VARCHAR(100) NOT NULL;
-ALTER TABLE `userPosts` ADD `postDateTime` DATETIME NOT NULL;
