@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <script type="text/javascript" src="scripts/validate.js"></script>
+    <title>CodeTerra: Find a User</title>
+    <?php include 'standardheader.html';?>
+</head>
 
 <?php
+include 'navbar.php';
 $validform = 0;
 if (!empty($_SERVER['HTTP_REFERER'])) {
     $referredfrom = '<a href="' . $_SERVER['HTTP_REFERER'] . '">Search for another user.</a>';
@@ -116,12 +122,16 @@ if ($validform == 1) {
         mysqli_stmt_close($stmt);
         
         
-        // ready for use in $image
-        echo '<img src="data:image/'.$type.';base64,'.base64_encode($image).'"/>';
-        echo "<br>";
-        echo ($referredfrom);
-        echo "<br>";
-        
+        if(!empty($image)) {
+            // ready for use in $image
+            echo '<img src="data:image/'.$type.';base64,'.base64_encode($image).'"/>';
+            echo "<br>";
+            echo ($referredfrom);
+            echo "<br>";
+        } else {
+            echo ($referredfrom);
+            echo "<br>";
+        }
     } else if (empty($foundname)) {
         print_r("Whoops, looks like we can't find a user with that name!");
         echo "<br>";
@@ -135,5 +145,6 @@ if ($validform == 1) {
     echo "<br>";
 }
 ?>
-
+<!-- Modal -->
+<?php include 'modal.php';?>
 </html>

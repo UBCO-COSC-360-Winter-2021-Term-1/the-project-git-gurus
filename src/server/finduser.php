@@ -2,7 +2,7 @@
 <html>
   <head>
     <script type="text/javascript" src="scripts/validate.js"></script>
-    <title>CodeTerra: Main Page</title>
+    <title>CodeTerra: Find a User</title>
     <?php include 'standardheader.html';?>
   </head>
   <?php include 'navbar.php';?>
@@ -16,4 +16,6 @@
       <input type="submit" value="Find User">
     </form>
   </body>
+  <!-- Modal -->
+  <?php include 'modal.php';?>
 </html>

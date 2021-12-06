@@ -11,7 +11,7 @@
 
 <body>
 
-<form method="post" action="processchangepassword.php" id="mainForm" >
+<form method="get" action="processfindpostpage.php" id="mainForm" >
   Username:<br>
   <input type="text" name="username" id="username" class="required">
   <br>
@@ -27,3 +27,6 @@
   <input type="submit" value="Update Password">
 </form>
 </body>
+<!-- Modal -->
+<?php include 'modal.php';?>
+</html>

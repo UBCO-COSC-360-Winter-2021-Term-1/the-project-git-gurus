@@ -7,31 +7,37 @@ if(!isset($_SESSION["user"]) ) {
 
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>CodeTerra: New Post</title>
     <?php include 'standardheader.html';?>
     <!-- Password checking script here!! -->
     <script type="text/javascript" src="js/validate.js"></script>
+    <link rel="stylesheet" href="css/submitpost.css">
   </head>
 
   <?php include 'navbar.php';?>
   <body>
-    <form method="post" action="newpostprocess.php" id="mainForm" enctype="multipart/form-data">
-      
-      Post Title:<br>
-      <input type="text" name="postTitle" id="postTitle" class="required">
+  <div class="container">  
+  <form method="post" action="newpostprocess.php" id="mainForm" enctype="multipart/form-data">
       <br>
+      <div class="form-group">
+        <!-- <label for="postTitle">Post Title:</Label> -->
+        <input type="text" name="postTitle" id="postTitle" class="form-control required" placeholder="Post Title">
+      </div>
       
-      Post Content:<br>
-      <textarea rows="10" cols="30" name="postContent" id="postContent" class="required">Post Content.</textarea>
+      <div class="form-group">
+      <textarea rows="10" cols="30" name="postContent" id="postContent" class="form-control required" placeholder="Post Content"></textarea>
+      </div>
 
-      <br>
-      File Upload:<br>
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <br><br>
-
-      <input type="submit" value="Create New User">
+      <div class="form-group">
+        <label for="fileToUpload">File input:  (&lt 64 KB)</label>
+        <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload">
+      </div>
+      
+      <button type="submit" class="btn btn-primary mb-2">Create New Post</button>
     </form>
-  </body>
+  </div>
+  </body>    
+  <!-- Modal -->
+    <?php include 'modal.php';?>
 </html>

@@ -118,7 +118,6 @@ $emails = array();
 if ($validform == 1) {
   //preprocess user values immediately:
   $username = strtolower($username);
-  $firstname = strtolower($firstname);
   $email = strtolower($email);
   $password = md5($password);
   $passwordchk = md5($passwordchk);
@@ -209,7 +208,7 @@ if ($validform == 1) {
           }
 
           // Check file size
-          if ($_FILES["fileToUpload"]["size"] > 5000000) {
+          if ($_FILES["fileToUpload"]["size"] > 65536) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
           }
@@ -233,8 +232,9 @@ if ($validform == 1) {
             $null = NULL;
             mysqli_stmt_bind_param($stmt, "isb", $userid, $imageFileType, $null);
             mysqli_stmt_send_long_data($stmt, 2, $imagedata);
-
             $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
+            usleep(10000);
+
             mysqli_stmt_close($stmt);
           }
         }

@@ -14,6 +14,7 @@
                     include 'loginform.php';
                     echo('<div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="http://cosc360.ok.ubc.ca/avivarma/newuser.php"><button type="button" class="btn btn-primary">New Account</button><a>
                     </div>');
                 } else {
                     echo('<p>User signed in is ' . $_SESSION["user"] .' </p>');
