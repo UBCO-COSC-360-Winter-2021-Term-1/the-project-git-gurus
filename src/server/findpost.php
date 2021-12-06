@@ -11,7 +11,7 @@
   <body>
     <div class="container">
       <br>
-      <form method="get" action="processfindpostpage.php" id="mainForm" >
+      <form method="get" action="processfindposthandler.php" id="mainForm" >
         <div class="form-group">
             <input type="text" name="postID" id="postID" class="form-control required" placeholder="Post ID">
         </div>

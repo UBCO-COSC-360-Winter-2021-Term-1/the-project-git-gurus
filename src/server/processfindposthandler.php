@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="scripts/validate.js"></script>
+        <script type="text/javascript" src="js/validate.js"></script>
         <title>CodeTerra: Find a User</title>
         <?php include 'standardheader.html';?>
-        <link rel="stylesheet" href="css/processfindpost.css">
     </head>
 
     
     
     <?php
-        include 'navbar.php';
         $validform = 0;
-        // if (!empty($_SERVER['HTTP_REFERER'])) {
-        //     $referredfrom = '<a href="' . $_SERVER['HTTP_REFERER'] . '">Search for another user.</a>';
-        // } else {
-            
-        // }
-        $referredfrom = '<a href="http://cosc360.ok.ubc.ca/avivarma/findpost.php">Search for another post</a>';
     ?>
 
 
@@ -49,12 +41,8 @@
     ?>
 
     <body>
-        
-        
-        <div class="container border rounded">    
-        
-        
-            <!-- Grab Post -->
+        <div class="d-flex flex-column">    
+        <!-- Grab Post -->
             <?php
                 if ($validform == 1) {
                     $host = "localhost";
@@ -105,26 +93,6 @@
                 }
             ?>
             
-            <?php 
-            if (!empty($postTitle)) {
-                echo('<div class="d-flex flex-row border rounded border-primary">');
-                    echo ('<div class="pt-2 pl-2"><h3>' .$postTitle . '</h3></div>');
-                    echo ('<div class="pt-2 pl-4 m-2">' .$postDateTime . '</div>');
-                    echo ('<div class="p-2 m-2">' .$username . '</div>');
-                echo('</div>');
-                
-                echo('<div class="d-flex flex-column">');
-                    echo('<div class="p-2">' . $postContent . '</div>');
-                echo('</div>');
-                
-            } else if (empty($postTitle)) {
-                print_r("Whoops, looks like we can't find a post with that id!");
-                echo "<br>";
-                echo ($referredfrom);
-                echo "<br>";
-            }
-            ?>
-            
             <?php
                 //Get UserImage
                 $connection = mysqli_connect($host, $user, $sqlpassword, $database);
@@ -138,27 +106,38 @@
                 // Fetches the blob and places it in the variable $image for use as well
                 // as the image type (which is stored in $type)
                 mysqli_stmt_close($stmt);
-                
-                
+            ?>
+
+            <?php 
+            if (!empty($postTitle)) {
+                echo('<div class="d-flex flex-row border rounded border-dark pt-2" style="background-color:#4b4c4c; min-width:400px;">');
+                    echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">' .$postTitle . '</h6></div>');
+                    echo ('<div class="mr-2 text-muted">' .$postDateTime . '</div>');
+                    echo ('<div class="mr-1 text-muted">' .$username . '</div>');
+                echo('</div>');
                 if(!empty($image)) {
                     // ready for use in $image
-                    echo('<div class="d-flex">
+                    echo('<div class="d-flex border justify-content-center align-items-center">
                             <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image"> 
-                            </div>                           
+                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height: 300px;"> 
+                            </div>                       
                         </div>');
-                        echo('<div class="flex-grow-1 ms-3">
-                        This is some content from a media component. You can replace this with any content and adjust it as needed.
-                        </div>');
-                        echo('</div>');
-                   
-                    echo($referredfrom);
+                    echo('<div class="border pt-2 pl-2" style="min-width:400px; min-height:100px;">' . $postContent .'</div>');    
                 } else {
+                    echo('<div class="border pt-2 pl-2" style="min-width:400px; min-height:100px;">' . $postContent .'</div>');    
                 }
+            } else if (empty($postTitle)) {
+                echo('<div class="d-flex flex-row border rounded border-dark pt-2" style="background-color:#4b4c4c; min-width:400px;">');
+                    echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">Error</h6></div>');
+                echo('</div>');
+                print_r("Whoops, looks like we can't find a post with that id!");
+
+                echo "<br>";
+                echo ($referredfrom);
+                echo "<br>";
+            }
             ?>
+
         </div>
     </body>
-    <!-- Modal -->
-    <?php include 'modal.php';?>
-
 </html>
