@@ -52,6 +52,7 @@ CREATE TABLE `userPosts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `userPosts` ADD `postID` INT NOT NULL AUTO_INCREMENT , ADD UNIQUE (`postID`);
+ALTER TABLE `userPosts` ADD `postVoteCount` INT NOT NULL;
 ALTER TABLE `userPosts` ADD PRIMARY KEY (`postID`);
 
 CREATE TABLE `postImages` (
