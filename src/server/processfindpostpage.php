@@ -5,6 +5,7 @@
         <title>CodeTerra: Find a User</title>
         <?php include 'standardheader.html';?>
         <link rel="stylesheet" href="css/processfindpost.css">
+        <link rel="stylesheet" href="css/vote.css">
     </head>
 
     
@@ -49,12 +50,10 @@
     ?>
 
     <body>
-        
-        
-        <div class="container border rounded">    
-        
-        
-            <!-- Grab Post -->
+        <div class="container" style="width:100%;">
+            <div class="d-flex flex-column">
+                <div class="d-flex">
+         <!-- Grab Post -->
             <?php
                 if ($validform == 1) {
                     $host = "localhost";
@@ -80,6 +79,7 @@
                             $postTitle = $row['postTitle'];
                             $postContent = $row['postContent'];
                             $postDateTime = $row['postDateTime'];
+                            $postVoteCount = $row['postVoteCount'];
                         }
                         mysqli_free_result($results);
 
@@ -105,26 +105,6 @@
                 }
             ?>
             
-            <?php 
-            if (!empty($postTitle)) {
-                echo('<div class="d-flex flex-row border rounded border-primary">');
-                    echo ('<div class="pt-2 pl-2"><h3>' .$postTitle . '</h3></div>');
-                    echo ('<div class="pt-2 pl-4 m-2">' .$postDateTime . '</div>');
-                    echo ('<div class="p-2 m-2">' .$username . '</div>');
-                echo('</div>');
-                
-                echo('<div class="d-flex flex-column">');
-                    echo('<div class="p-2">' . $postContent . '</div>');
-                echo('</div>');
-                
-            } else if (empty($postTitle)) {
-                print_r("Whoops, looks like we can't find a post with that id!");
-                echo "<br>";
-                echo ($referredfrom);
-                echo "<br>";
-            }
-            ?>
-            
             <?php
                 //Get UserImage
                 $connection = mysqli_connect($host, $user, $sqlpassword, $database);
@@ -138,24 +118,49 @@
                 // Fetches the blob and places it in the variable $image for use as well
                 // as the image type (which is stored in $type)
                 mysqli_stmt_close($stmt);
+            ?>
+            <?php 
+            
+            if (!empty($postTitle)) {
                 
-                
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                    <div id="upvote"></div><br/>
+                    <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
+                    <div id="downvote"></div>
+                </div>');
+                echo('<div class="d-flex flex-column" style="width:100%; min-width:370px;">');
+                    echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; width:100%;">');
+                        echo ('<div class="ml-1 mr-auto"><a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><h6 style="color:white;">' .$postTitle . '</h6></a></div>');
+                        echo ('<div class="mr-2 text-muted">' .$postDateTime . '</div>');
+                        echo ('<div class="mr-1 text-muted">' .$username . '</div>');
+                    echo('</div>');
                 if(!empty($image)) {
                     // ready for use in $image
-                    echo('<div class="d-flex">
+                    echo('<div class="d-flex justify-content-center align-items-center">
                             <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image"> 
-                            </div>                           
+                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height: 300px;"> 
+                            </div>                       
                         </div>');
-                        echo('<div class="flex-grow-1 ms-3">
-                        This is some content from a media component. You can replace this with any content and adjust it as needed.
-                        </div>');
-                        echo('</div>');
-                   
-                    echo($referredfrom);
+                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
                 } else {
+                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');    
                 }
+            } else if (empty($postTitle)) {
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                    <div id="upvote"></div><br/>
+                    <div id = "votecount"><h6 style="color:white;"> E </h6></div><br/>
+                    <div id="downvote"></div>
+                </div>');
+                echo('<div class="d-flex flex-column" style="width:370px;">');
+                echo('<div class="d-flex flex-row border-right rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
+                    echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">Error</h6></div>');
+                echo('</div>');
+                echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;"> Whoops, looks like we cant find a post with that id!)</div>');
+            }
             ?>
+
+        </div>
+        </div>
         </div>
     </body>
     <!-- Modal -->

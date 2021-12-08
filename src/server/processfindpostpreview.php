@@ -117,22 +117,23 @@
                     <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
                     <div id="downvote"></div>
                 </div>');
-                echo('<div class="d-flex flex-column" style="width:100%; min-width:370px;">');
-                    echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; width:100%;">');
-                        echo ('<div class="ml-1 mr-auto"><a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><h6 style="color:white;">' .$postTitle . '</h6></a></div>');
-                        echo ('<div class="mr-2 text-muted">' .$postDateTime . '</div>');
+                echo('<div class="d-flex flex-column" style="width:100%;">');
+                    echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
+                    echo ('<div class="ml-1 mr-auto"><a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><h6 style="color:white;">' .$postTitle . '</h6></a></div>');
+                        echo ('<div class="mr-2 text-muted">Submitted: ' .$postDateTime . '</div>');
                         echo ('<div class="mr-1 text-muted">' .$username . '</div>');
                     echo('</div>');
                 if(!empty($image)) {
                     // ready for use in $image
-                    echo('<div class="d-flex justify-content-center align-items-center">
+                    echo('<div class="d-flex border flex-row" style="width:100%;">
                             <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height: 300px;"> 
-                            </div>                       
+                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height:70px;"> 
+                            </div>
+                            <div class="pt-1 pl-1" style="width:100%; height:100%;">' . $postContent .'</div>                       
                         </div>');
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
+                    // echo('<div class="border rounded-bottom pt-1 pl-1" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
                 } else {
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');    
+                    echo('<div class="border rounded-bottom justify-content-center pt-2 pl-2" style="min-width:370px; height:100%; width:100%;">' . $postContent .'</div>');    
                 }
             } else if (empty($postTitle)) {
                 echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
@@ -144,7 +145,7 @@
                 echo('<div class="d-flex flex-row border-right rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
                     echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">Error</h6></div>');
                 echo('</div>');
-                echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;"> Whoops, looks like we cant find a post with that id!)</div>');
+                echo('<div class="border pt-2 pl-2" style="min-width:370px; height:100%;"> Whoops, looks like we cant find a post with that id!)</div>');
             }
             ?>
 
