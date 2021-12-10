@@ -90,9 +90,8 @@
                     echo "<br>";
                 }
             ?>
-            
+            <!-- Get UserImage -->
             <?php
-                //Get UserImage
                 $connection = mysqli_connect($host, $user, $sqlpassword, $database);
                 $sql = "SELECT imagePath FROM postImages where postID=?";
                 $stmt = mysqli_stmt_init($connection);

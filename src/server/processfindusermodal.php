@@ -60,6 +60,18 @@ if ($validform == 1) {
             $userID = $row['userID'];
         }
         mysqli_free_result($results);
+
+        //good connection, so do you thing
+        $sql = "SELECT COUNT(postID) as numposts FROM userPosts WHERE userID=?"; // SQL with parameters
+        $stmt = $connection->prepare($sql);
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+        $results = $stmt->get_result(); // get the mysqli result
+        //and fetch requsults
+        while ($row = mysqli_fetch_assoc($results)) {
+            $numposts = $row['numposts'];
+        }
+        mysqli_free_result($results);
         mysqli_close($connection);
     }
 
@@ -67,27 +79,29 @@ if ($validform == 1) {
         // echo ("This is a existing username.");
         // echo "<br>";
         //Print the results
-        echo ('<fieldset id="fieldset" style="width: 300px;">
-        <table style="text-align: left;">
-            <tr">
-                <td>First Name:</td>
-                <td>'.$firstname.'</td> 
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td>'.$lastname.'</td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>'.$email.'</td>
-            </tr>
-            <tr>
-                <td>userID:</td>
-                <td>'.$userID.'</td>
-            </tr>
-        </table>
-        </fieldset>
-        
+        echo ('
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">First Name:</th>
+                        <td>'.$firstname.'</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last Name:</th>
+                        <td>'.$lastname.'</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Email:</th>
+                        <td>'.$email.'</td>
+                    </tr>
+                    <th scope="row">UserID:</th>
+                        <td>'.$userID.'</td>
+                    </tr>
+                    <th scope="row">Number of User Posts:</th>
+                        <td>'.$numposts.'</td>
+                    </tr>
+                </tbody>
+            </table>
         ');
         
         //Get UserImage

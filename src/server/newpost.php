@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["user"]) ) {
-    header('location: http://cosc360.ok.ubc.ca/avivarma/login.php');
+    header('location: http://cosc360.ok.ubc.ca/avivarma/loginpage.php');
 }
 ?>
 

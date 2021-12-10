@@ -10,14 +10,7 @@ session_start();
     <head>
         <title>CodeTerra: Main Page</title>
         <?php include 'standardheader.html';?>
-        <script>
-            function changeContent(arg1) {
-                $('#threads').load('./loadthreads.php?category=' + arg1);
-            }
-            function searchContent(arg1) {
-                $('#threads').load('./loadthreadskeyword.php?search=' + arg1);
-            }
-        </script>
+        <script type="text/javascript" src="js/ThreadFunctions.js"></script>
     </head>
     <?php include 'navbarthreads.php';?>
     <body>
@@ -29,6 +22,7 @@ session_start();
                     <option value="New">New</option>
             </select>       
             <div id="threads">
+                <!-- Default Page Display -->
                 <?php
                 $host = "localhost";
                 $database = "db_39738166";
