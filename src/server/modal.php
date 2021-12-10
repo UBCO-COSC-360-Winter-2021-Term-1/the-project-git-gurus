@@ -18,10 +18,13 @@
                     </div>');
                 } else {
                     echo('<p>User signed in is ' . $_SESSION["user"] .' </p>');
-                    include 'changepassword.php';
+                    $_GET['username'] = $_SESSION["user"];
+                    include ('processfindusermodal.php');
                     echo('<div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="http://cosc360.ok.ubc.ca/avivarma/logout.php"><button type="button" class="btn btn-primary">Log Out</button><a>
+                        
+                        <a href="http://cosc360.ok.ubc.ca/avivarma/changepasswordpage.php"><button type="button" class="btn btn-primary">Change Password</button><a>
+                        <a href="http://cosc360.ok.ubc.ca/avivarma/logout.php"><button type="button" class="btn btn-primary">Log Out</button><a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>');
                 }
                 ?>

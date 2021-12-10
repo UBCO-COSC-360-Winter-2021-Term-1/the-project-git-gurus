@@ -17,15 +17,16 @@
     
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    Useful Pages
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="./newuser.php">New User</a>    
                         <a class="dropdown-item" href="./finduser.php">Find Users</a>
-                        <a class="dropdown-item" href="./newpost.php">New Post</a>
                     </div>
                 </li>
             </ul>
+
+            <a href="newpost.php"><button type="button"class="btn btn-info btn-md ml-auto mr-2 little-margin-left">New Post</button></a>
     
             <form method="get" action="search.php" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" onkeyup="searchContent(this.value)" name="keyword" id="keyword" placeholder="Search" aria-label="Search">

@@ -109,9 +109,9 @@
             
             if (!empty($postTitle)) {
                 echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 130px">
-                    <div id="upvote"></div><br/>
+                    <a href="upvote.php?postID='.$postID.'"><div id="upvote"></div></a><br/>
                     <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
-                    <div id="downvote"></div>
+                    <a href="downvote.php?postID='.$postID.'"><div id="downvote"></div></a>
                 </div>');
                 echo('<div class="d-flex flex-column" style="width:100%;">');
                     echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');

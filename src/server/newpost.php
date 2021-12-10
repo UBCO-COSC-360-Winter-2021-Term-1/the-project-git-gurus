@@ -34,9 +34,8 @@ if(!isset($_SESSION["user"]) ) {
       </div>
       
       <button type="submit" class="btn btn-primary mb-2">Create New Post</button>
-    </form>
+  </form>
   </div>
   </body>    
-  <!-- Modal -->
-    <?php include 'modal.php';?>
+  <?php include ("modal.php"); ?>
 </html>

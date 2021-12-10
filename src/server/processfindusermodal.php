@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CodeTerra: Find a User</title>
-    <?php include 'standardheader.html';?>
-</head>
-
-
-<?php include 'navbar.php';
-$validform = 0;
-if (!empty($_SERVER['HTTP_REFERER'])) {
-    $referredfrom = '<a href="' . $_SERVER['HTTP_REFERER'] . '">Search for another user.</a>';
-} else {
-    $referredfrom = '<a href="http://cosc360.ok.ubc.ca/avivarma/finduser.php">Search for another user</a>';
-}
-?>
-
-
 <!-- GET handler -->
 <?php
+$validform = 0;
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $validform = 1;
     //username
@@ -43,8 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<div class = "container bg-light">
-    
+   
 <?php
 if ($validform == 1) {
 
@@ -86,7 +68,6 @@ if ($validform == 1) {
         // echo "<br>";
         //Print the results
         echo ('<fieldset id="fieldset" style="width: 300px;">
-        <legend>User: '. $foundname . '</legend>
         <table style="text-align: left;">
             <tr">
                 <td>First Name:</td>
@@ -125,7 +106,7 @@ if ($validform == 1) {
         
         if(!empty($image)) {
             // ready for use in $image
-            echo '<img src="data:image/'.$type.';base64,'.base64_encode($image).'"/>';
+            echo '<img class="m-4 rounded" src="data:image/'.$type.';base64,'.base64_encode($image).'" style="width:400px;"/>';
             echo "<br>";
             echo ($referredfrom);
             echo "<br>";
@@ -146,5 +127,3 @@ if ($validform == 1) {
     echo "<br>";
 }
 ?>
-</div>
-</html>

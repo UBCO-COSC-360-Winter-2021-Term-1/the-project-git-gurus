@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>CodeTerra: Change Password</title>
-  <?php include 'standardheader.html';?>
-  <!-- Password checking script here! -->
   <script type="text/javascript" src="js/validate.js"></script>
 </head>
 

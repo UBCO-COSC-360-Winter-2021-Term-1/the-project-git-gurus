@@ -54,9 +54,9 @@
 
         <div class = "d-flex flex-column">    
             <div class="d-flex flex-row">
-                <div class="form-outline mt-2">
+                <!-- <div class="form-outline mt-2">
                     <input id="searchbar" type="search" onkeydown="changeContent()" class="form-control" placeholder="Post ID"/>
-                </div>
+                </div> -->
                 <div class="d-flex mt-2" style="width:400px;">
                 </div>
             </div>
