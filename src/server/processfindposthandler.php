@@ -2,6 +2,7 @@
 <html>
     <head>
         <script type="text/javascript" src="js/validate.js"></script>
+        <script type="text/javascript" src="js/upvote.js"></script>
         <title>CodeTerra: Find a Post</title>
         <?php include 'standardheader.html';?>
         <link rel="stylesheet" href="css/vote.css">
@@ -112,10 +113,11 @@
             <?php 
             
             if (!empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 110px;">
-                    <div id="upvote"></div><br/>
-                    <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
-                    <div id="downvote"></div>
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 110px">
+                    <div id="upvote" onclick="upvote('.$postID.')">
+                    </div><br/>
+                    <div><h6 id = "votecount'.$postID.'" style="color:white;"> '. $postVoteCount . '</h6></div><br/>
+                    <div id="downvote" onclick="downvote('.$postID.')"></div>
                 </div>');
                 echo('<div class="d-flex flex-column" style="width:100%; min-width:370px;">');
                     echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; width:100%;">');

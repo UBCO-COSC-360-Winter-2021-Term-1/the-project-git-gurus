@@ -37,5 +37,6 @@ if(!isset($_SESSION["user"]) ) {
   </form>
   </div>
   </body>    
-  <?php include ("modal.php"); ?>
+  <!-- Modal -->
+  <?php include 'modalform.php';?>
 </html>

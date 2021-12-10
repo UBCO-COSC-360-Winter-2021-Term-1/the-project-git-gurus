@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="scripts/validate.js"></script>
         <title>CodeTerra: Find a User</title>
         <?php include 'standardheader.html';?> 
         <link rel="stylesheet" href="css/processfindpost.css">
+        
         <script>
         function changeContent() {
             if(event.keyCode == 13) {

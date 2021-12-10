@@ -2,6 +2,7 @@
 <html>
     <head>
         <script type="text/javascript" src="js/validate.js"></script>
+        <script type="text/javascript" src="js/upvote.js"></script>
         <?php include 'standardheader.html';?>
         <link rel="stylesheet" href="css/vote.css">
     </head>
@@ -109,9 +110,10 @@
             
             if (!empty($postTitle)) {
                 echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 130px">
-                    <a href="upvote.php?postID='.$postID.'"><div id="upvote"></div></a><br/>
-                    <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
-                    <a href="downvote.php?postID='.$postID.'"><div id="downvote"></div></a>
+                    <div id="upvote" onclick="upvote('.$postID.')">
+                    </div><br/>
+                    <div><h6 id = "votecount'.$postID.'" style="color:white;"> '. $postVoteCount . '</h6></div><br/>
+                    <div id="downvote" onclick="downvote('.$postID.')"></div>
                 </div>');
                 echo('<div class="d-flex flex-column" style="width:100%;">');
                     echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
@@ -157,7 +159,7 @@
                 echo('<div class="border pt-2 pl-2" style="min-width:370px; height:100%;"> Whoops, looks like we cant find a post with that id!)</div>');
             }
             ?>
-
         </div>
     </body>
+    
 </html>

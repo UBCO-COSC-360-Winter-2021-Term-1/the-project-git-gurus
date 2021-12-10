@@ -17,7 +17,8 @@
       </form>
     </div>
   </body>
-  <?php include("modal.php"); ?>
+  <!-- Modal -->
+  <?php include 'modalform.php';?>
   
   
 </html>

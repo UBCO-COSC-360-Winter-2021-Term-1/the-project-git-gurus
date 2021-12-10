@@ -20,5 +20,5 @@
     </div>
   </body>
   <!-- Modal -->
-  <?php include 'modal.php';?>
+  <?php include 'modalform.php';?>
 </html>
