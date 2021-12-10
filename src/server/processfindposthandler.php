@@ -43,7 +43,7 @@
 
     <body>
         <div class="d-flex flex-row" style="width:100%;">
-        <!-- Grab Post -->
+            <!-- Grab Post -->
             <?php
                 if ($validform == 1) {
                     $host = "localhost";
@@ -98,12 +98,12 @@
             <?php
                 //Get UserImage
                 $connection = mysqli_connect($host, $user, $sqlpassword, $database);
-                $sql = "SELECT contentType, image FROM postImages where postID=?";
+                $sql = "SELECT imagePath FROM postImages where postID=?";
                 $stmt = mysqli_stmt_init($connection);
                 mysqli_stmt_prepare($stmt, $sql);
                 mysqli_stmt_bind_param($stmt, "i", $postID);
                 $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
-                mysqli_stmt_bind_result($stmt, $type, $image); //bind in results
+                mysqli_stmt_bind_result($stmt, $imagePath); //bind in results
                 mysqli_stmt_fetch($stmt);
                 // Fetches the blob and places it in the variable $image for use as well
                 // as the image type (which is stored in $type)
@@ -112,7 +112,7 @@
             <?php 
             
             if (!empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 110px;">
                     <div id="upvote"></div><br/>
                     <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
                     <div id="downvote"></div>
@@ -123,24 +123,24 @@
                         echo ('<div class="mr-2 text-muted">' .$postDateTime . '</div>');
                         echo ('<div class="mr-1 text-muted">' .$username . '</div>');
                     echo('</div>');
-                if(!empty($image)) {
+                if(!empty($imagePath)) {
                     // ready for use in $image
                     echo('<div class="d-flex justify-content-center align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height: 300px;"> 
+                            <div class="flex-shrink-0 m-2">
+                                <img src="'. $imagePath . '" alt="Generic placeholder image" style="height: 300px;"> 
                             </div>                       
                         </div>');
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
+                    echo('<div class="border border-dark pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
                 } else {
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');    
+                    echo('<div class="border border-top-0 border-dark pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');    
                 }
             } else if (empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 110px;">
                     <div id="upvote"></div><br/>
-                    <div id = "votecount"><h6 style="color:white;"> E </h6></div><br/>
+                    <div id = "votecount"><h6 style="color:white;">E</h6></div><br/>
                     <div id="downvote"></div>
                 </div>');
-                echo('<div class="d-flex flex-column" style="width:370px;">');
+                echo('<div class="d-flex flex-column" style="width:100%; min-width:370px;">');
                 echo('<div class="d-flex flex-row border-right rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
                     echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">Error</h6></div>');
                 echo('</div>');

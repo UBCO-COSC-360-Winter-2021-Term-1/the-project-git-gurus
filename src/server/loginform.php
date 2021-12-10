@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
         <!-- <label for="postTitle">Post Title:</Label> -->
-        <input type="text" name="password" id="password" class="form-control required" placeholder="Password">
+        <input type="password" name="password" id="password" class="form-control required" placeholder="Password">
         </div>  
         <button type="submit" class="btn btn-primary mb-2">Login</button>
       </form>

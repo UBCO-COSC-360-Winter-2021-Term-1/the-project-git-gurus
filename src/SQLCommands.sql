@@ -67,3 +67,5 @@ ALTER TABLE `postImages`
 
 ALTER TABLE `postImages`
   ADD CONSTRAINT `postimages_ibfk_1` FOREIGN KEY (`postID`) REFERENCES `userPosts` (`postID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE postImages ADD imagePath varchar(255);

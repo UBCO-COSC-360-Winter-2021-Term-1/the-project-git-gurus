@@ -3,24 +3,18 @@
     <head>
         <script type="text/javascript" src="scripts/validate.js"></script>
         <title>CodeTerra: Find a User</title>
-        <?php include 'standardheader.html';?>
+        <?php include 'standardheader.html';?> 
         <link rel="stylesheet" href="css/processfindpost.css">
-        <link rel="stylesheet" href="css/vote.css">
+        <script>
+        function changeContent() {
+            if(event.keyCode == 13) {
+                let input = document.getElementById('searchbar').value
+                input=input.toLowerCase();
+                $('#post').load('./processfindposthandler.php?postID=' + input);
+            }   
+        }
+        </script>
     </head>
-
-    
-    
-    <?php
-        include 'navbar.php';
-        $validform = 0;
-        // if (!empty($_SERVER['HTTP_REFERER'])) {
-        //     $referredfrom = '<a href="' . $_SERVER['HTTP_REFERER'] . '">Search for another user.</a>';
-        // } else {
-            
-        // }
-        $referredfrom = '<a href="http://cosc360.ok.ubc.ca/avivarma/findpost.php">Search for another post</a>';
-    ?>
-
 
     <!-- GET handler -->
     <?php
@@ -49,121 +43,31 @@
         }
     ?>
 
+    <?php
+        include 'navbar.php';
+        $validform = 0;
+    ?>
+
+
     <body>
-        <div class="container" style="width:100%;">
-            <div class="d-flex flex-column">
-                <div class="d-flex">
-         <!-- Grab Post -->
-            <?php
-                if ($validform == 1) {
-                    $host = "localhost";
-                    $database = "db_39738166";
-                    $user = "39738166";
-                    $sqlpassword = "39738166";
+        <div class="container">
 
-                    $connection = mysqli_connect($host, $user, $sqlpassword, $database);
-                    $error = mysqli_connect_error();
-                    if ($error != null) {
-                        $output = "<p>Unable to connect to database!</p>";
-                        exit($output);
-                    } else {
-                        //good connection, so do you thing
-                        $sql = "SELECT * FROM userPosts WHERE postID=?"; // SQL with parameters
-                        $stmt = $connection->prepare($sql);
-                        $stmt->bind_param("i", $postID);
-                        $stmt->execute();
-                        $results = $stmt->get_result(); // get the mysqli result
-                        //and fetch requsults
-                        while ($row = mysqli_fetch_assoc($results)) {
-                            $userID = $row['userID'];
-                            $postTitle = $row['postTitle'];
-                            $postContent = $row['postContent'];
-                            $postDateTime = $row['postDateTime'];
-                            $postVoteCount = $row['postVoteCount'];
-                        }
-                        mysqli_free_result($results);
-
-                        //good connection, so do you thing
-                        $sql = "SELECT username FROM users WHERE userID=?"; // SQL with parameters
-                        $stmt = $connection->prepare($sql);
-                        $stmt->bind_param("i", $userID);
-                        $stmt->execute();
-                        $results = $stmt->get_result(); // get the mysqli result
-                        
-                        //and fetch requsults
-                        while ($row = mysqli_fetch_assoc($results)) {
-                            $username = $row['username'];
-                        }
-                        mysqli_free_result($results);
-                        mysqli_close($connection);
-                    }
-                } else if (!$validform) {
-                    echo ("Invalid form information, account not created.");
-                    echo "<br>";
-                    echo ($referredfrom);
-                    echo "<br>";
-                }
-            ?>
-            
-            <?php
-                //Get UserImage
-                $connection = mysqli_connect($host, $user, $sqlpassword, $database);
-                $sql = "SELECT contentType, image FROM postImages where postID=?";
-                $stmt = mysqli_stmt_init($connection);
-                mysqli_stmt_prepare($stmt, $sql);
-                mysqli_stmt_bind_param($stmt, "i", $postID);
-                $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
-                mysqli_stmt_bind_result($stmt, $type, $image); //bind in results
-                mysqli_stmt_fetch($stmt);
-                // Fetches the blob and places it in the variable $image for use as well
-                // as the image type (which is stored in $type)
-                mysqli_stmt_close($stmt);
-            ?>
-            <?php 
-            
-            if (!empty($postTitle)) {
-                
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
-                    <div id="upvote"></div><br/>
-                    <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
-                    <div id="downvote"></div>
-                </div>');
-                echo('<div class="d-flex flex-column" style="width:100%; min-width:370px;">');
-                    echo('<div class="d-flex flex-row rounded-right pt-2" style="background-color:#4b4c4c; width:100%;">');
-                        echo ('<div class="ml-1 mr-auto"><a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><h6 style="color:white;">' .$postTitle . '</h6></a></div>');
-                        echo ('<div class="mr-2 text-muted">' .$postDateTime . '</div>');
-                        echo ('<div class="mr-1 text-muted">' .$username . '</div>');
-                    echo('</div>');
-                if(!empty($image)) {
-                    // ready for use in $image
-                    echo('<div class="d-flex justify-content-center align-items-center">
-                            <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height: 300px;"> 
-                            </div>                       
-                        </div>');
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
-                } else {
-                    echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;">' . $postContent .'</div>');    
-                }
-            } else if (empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
-                    <div id="upvote"></div><br/>
-                    <div id = "votecount"><h6 style="color:white;"> E </h6></div><br/>
-                    <div id="downvote"></div>
-                </div>');
-                echo('<div class="d-flex flex-column" style="width:370px;">');
-                echo('<div class="d-flex flex-row border-right rounded-right pt-2" style="background-color:#4b4c4c; min-width:370px;">');
-                    echo ('<div class="ml-1 mr-auto"><h6 style="color:white;">Error</h6></div>');
-                echo('</div>');
-                echo('<div class="border pt-2 pl-2 mb-auto" style="min-width:370px; height:100%;"> Whoops, looks like we cant find a post with that id!)</div>');
-            }
-            ?>
-
-        </div>
-        </div>
+        <div class = "d-flex flex-column">    
+            <div class="d-flex flex-row">
+                <div class="form-outline mt-2">
+                    <input id="searchbar" type="search" onkeydown="changeContent()" class="form-control" placeholder="Post ID"/>
+                </div>
+                <div class="d-flex mt-2" style="width:400px;">
+                </div>
+            </div>
+            <div class="d-flex mt-2 mb-2" id="post">
+                <?php include 'processfindposthandler.php';?>
+            </div>
+            <div class="d-flex mt-2">
+            </div>
         </div>
     </body>
+
     <!-- Modal -->
     <?php include 'modal.php';?>
-
 </html>

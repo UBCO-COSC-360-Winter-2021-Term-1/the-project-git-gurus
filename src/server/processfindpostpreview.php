@@ -2,18 +2,13 @@
 <html>
     <head>
         <script type="text/javascript" src="js/validate.js"></script>
-        <title>CodeTerra: Find a Post</title>
         <?php include 'standardheader.html';?>
         <link rel="stylesheet" href="css/vote.css">
     </head>
 
-    
-    
     <?php
         $validform = 0;
     ?>
-
-
     <!-- GET handler -->
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -98,21 +93,22 @@
             <?php
                 //Get UserImage
                 $connection = mysqli_connect($host, $user, $sqlpassword, $database);
-                $sql = "SELECT contentType, image FROM postImages where postID=?";
+                $sql = "SELECT imagePath FROM postImages where postID=?";
                 $stmt = mysqli_stmt_init($connection);
                 mysqli_stmt_prepare($stmt, $sql);
                 mysqli_stmt_bind_param($stmt, "i", $postID);
                 $result = mysqli_stmt_execute($stmt) or die(mysqli_stmt_error($stmt));
-                mysqli_stmt_bind_result($stmt, $type, $image); //bind in results
+                mysqli_stmt_bind_result($stmt, $imagePath); //bind in results
                 mysqli_stmt_fetch($stmt);
                 // Fetches the blob and places it in the variable $image for use as well
                 // as the image type (which is stored in $type)
                 mysqli_stmt_close($stmt);
             ?>
+
             <?php 
             
             if (!empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 130px">
                     <div id="upvote"></div><br/>
                     <div id = "votecount"><h6 style="color:white;"> '. $postVoteCount . '</h6></div><br/>
                     <div id="downvote"></div>
@@ -123,20 +119,33 @@
                         echo ('<div class="mr-2 text-muted">Submitted: ' .$postDateTime . '</div>');
                         echo ('<div class="mr-1 text-muted">' .$username . '</div>');
                     echo('</div>');
-                if(!empty($image)) {
+                if(!empty($imagePath)) {
                     // ready for use in $image
-                    echo('<div class="d-flex border flex-row" style="width:100%;">
-                            <div class="flex-shrink-0">
-                                <img src="data:image/'. $type .';base64,'. base64_encode($image) .'" alt="Generic placeholder image" style="height:70px;"> 
+                    echo('<div class="d-flex flex-row pt-1 pb-2" style="width:100%;">
+                            <div class="flex-shrink-0 pl-1">
+                                <img src="'. $imagePath . '" alt="Generic placeholder image" style="height:90px;"> 
                             </div>
-                            <div class="pt-1 pl-1" style="width:100%; height:100%;">' . $postContent .'</div>                       
+                            <div class="border rounded-bottom justify-content-center pt-2 pl-2 ml-1" style="min-width:370px; height:100%; width:100%;">' . $postContent .'</div>                       
                         </div>');
                     // echo('<div class="border rounded-bottom pt-1 pl-1" style="min-width:370px; height:100%;">' . $postContent .'</div>');        
                 } else {
                     echo('<div class="border rounded-bottom justify-content-center pt-2 pl-2" style="min-width:370px; height:100%; width:100%;">' . $postContent .'</div>');    
                 }
-            } else if (empty($postTitle)) {
-                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px;">
+                echo('<div class="d-flex flex-row" style="background-color:#4b4c4c; min-width:370px;">');
+                    echo('<div class="d-flex ml-2">');
+                        echo('<a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><i class="bi-chat-left-text" style="font-size: 1.2em; color: white;"></i></a>');
+                    echo('</div>');
+                    echo('<div class="d-flex ml-2">');
+                        echo('<a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><i class="bi-tag" style="font-size: 1.2em; color: white;"></i></a>');
+                    echo('</div>');
+                    echo('<div class="d-flex ml-2">');
+                        echo('<a href = "http://cosc360.ok.ubc.ca/avivarma/processfindpostpage.php?postID=' . $postID . '"><i class="bi-bookmark" style="font-size: 1.2em; color: white;"></i></a>');
+                    echo('</div>');
+                echo('</div>');
+            } 
+            
+            else if (empty($postTitle)) {
+                echo('<div class="d-flex flex-column align-items-center rounded-left pt-2" style="background-color:#4b4c4c; width:30px; min-height: 110px">
                     <div id="upvote"></div><br/>
                     <div id = "votecount"><h6 style="color:white;"> E </h6></div><br/>
                     <div id="downvote"></div>

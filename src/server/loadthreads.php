@@ -63,23 +63,34 @@ if ($validform == 1) {
             }
             mysqli_free_result($results);
             mysqli_close($connection);
-        } 
+        }  else if(!strcmp($category,"All")) {
+            //good connection, so do you thing
+            $sql = "SELECT postID FROM userPosts ORDER BY postDateTime DESC;"; // SQL with parameters
+            $stmt = $connection->prepare($sql);
+            // $stmt->bind_param("i", $category);
+            $stmt->execute();
+            $results = $stmt->get_result(); // get the mysqli result
+            //and fetch requsults
+            while ($row = mysqli_fetch_assoc($results)) {
+                $postIDs[] = $row['postID'];
+            }
+            mysqli_free_result($results);
+            mysqli_close($connection);
+        }
+
     }
 } else if (!$validform) {
     echo ("Invalid form information.");
 }
 
 
-
-
-
-print_r($category);
-print_r($postIDs);
+// print_r($category);
+// print_r($postIDs);
 
 echo('<div class="d-flex flex-column mt-2">');
 foreach ($postIDs as &$x) {
     echo('
-    <div class="d-flex mt-2" id="content' . $x . '" style="height:110px;">
+    <div class="d-flex bg-light rounded mt-2" id="content' . $x . '" style="">
         <p> This is where content will go </p>
     </div>');
     echo('<script>

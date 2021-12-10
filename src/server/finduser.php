@@ -8,13 +8,15 @@
   <?php include 'navbar.php';?>
 
   <body>
-    <form method="post" action="processfinduser.php" id="mainForm" >
-      Username:<br>
-      <input type="text" name="username" id="username" class="required">
-      <br>
-      <br><br>
-      <input type="submit" value="Find User">
-    </form>
+    <div class="container bg-light">
+      <form method="post" action="processfinduser.php" id="mainForm" >
+        Username:<br>
+        <input type="text" name="username" id="username" class="required">
+        <br>
+        <br><br>
+        <input type="submit" value="Find User">
+      </form>
+    </div>
   </body>
   <!-- Modal -->
   <?php include 'modal.php';?>

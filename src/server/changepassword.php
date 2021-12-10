@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CodeTerra: Main Page</title>
+  <title>CodeTerra: Change Password</title>
   <?php include 'standardheader.html';?>
   <!-- Password checking script here! -->
   <script type="text/javascript" src="js/validate.js"></script>
 </head>
 
-<?php include 'navbar.php';?>
-
 <body>
-
+<div class="container">
 <form method="get" action="processfindpostpage.php" id="mainForm" >
   Username:<br>
   <input type="text" name="username" id="username" class="required">
@@ -26,7 +24,7 @@
   <br><br>
   <input type="submit" value="Update Password">
 </form>
+</div>
 </body>
-<!-- Modal -->
-<?php include 'modal.php';?>
+
 </html>

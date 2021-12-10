@@ -18,6 +18,7 @@
                     </div>');
                 } else {
                     echo('<p>User signed in is ' . $_SESSION["user"] .' </p>');
+                    include 'changepassword.php';
                     echo('<div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <a href="http://cosc360.ok.ubc.ca/avivarma/logout.php"><button type="button" class="btn btn-primary">Log Out</button><a>

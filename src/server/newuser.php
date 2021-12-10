@@ -3,7 +3,6 @@
 <head>
   <title>CodeTerra: New User</title>
   <?php include 'standardheader.html';?>
-  <link rel="stylesheet" href="css/newuser.css">
   <!-- Password checking script here!! -->
   <script type="text/javascript" src="scripts/validate.js"></script>
 </head>

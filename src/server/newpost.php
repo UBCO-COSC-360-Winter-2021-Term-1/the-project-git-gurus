@@ -12,7 +12,6 @@ if(!isset($_SESSION["user"]) ) {
     <?php include 'standardheader.html';?>
     <!-- Password checking script here!! -->
     <script type="text/javascript" src="js/validate.js"></script>
-    <link rel="stylesheet" href="css/submitpost.css">
   </head>
 
   <?php include 'navbar.php';?>
@@ -30,7 +29,7 @@ if(!isset($_SESSION["user"]) ) {
       </div>
 
       <div class="form-group">
-        <label for="fileToUpload">File input:  (&lt 64 KB)</label>
+        <label for="fileToUpload">File input:  (&lt 10 MB)</label>
         <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload">
       </div>
       
